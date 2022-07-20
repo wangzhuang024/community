@@ -8,6 +8,10 @@
     <sql id="selectFields">
         id, user_id, title, content, type, status, create_time, comment_count, score
     </sql>
+
+    <sql id="insertFields">
+        user_id, title, content, type, status, create_time, comment_count, score
+    </sql>
     
     <!-- List是java自带的，可以检测到，只需要声明DiscussPost-->
     <select id="selectDiscussPosts" resultType="DiscussPost">
@@ -30,5 +34,11 @@
             and user_id = #{userId}
         </if>
     </select>
+    
+    <insert id="insertDiscussPost" parameterType="DiscussPost">
+        insert into discuss_post(<include refid="insertFields"></include>)
+        values(#{userId},#{title},#{content},#{type},#{status},#{createTime},#{commentCount},#{score})
+    </insert>
+
 
 </mapper>
