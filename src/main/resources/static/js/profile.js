@@ -24,7 +24,7 @@ function follow() {
 		//$(btn).text("关注TA").removeClass("btn-secondary").addClass("btn-info");
 		$.post(
 			CONTEXT_PATH +  "/unfollow",
-			{"entityType":3,"entityId:":$(btn).prev().val()},
+			{"entityType":3,"entityId":$(btn).prev().val()},
 			function (data) {
 				data = $.parseJSON(data);
 				if (data.code == 0) {
