@@ -132,15 +132,15 @@ public class AlphaService {
         });
     }
 
-    // 让该方法在多线程环境下，被异步调用。
-    @Async
-    public void execute1() {
-        logger.debug("execute1");
-    }
-
-    // 定时线程
-    @Scheduled(initialDelay = 10000, fixedDelay = 1000)
-    public void execute2() {
-        logger.debug("execute2");
-    }
+//    // 让该方法在多线程环境下，被异步调用。
+//    @Async
+//    public void execute1() {
+//        logger.debug("execute1");
+//    }
+//
+//    // 定时线程
+//    @Scheduled(initialDelay = 10000, fixedDelay = 1000)
+//    public void execute2() {
+//        logger.debug("execute2");
+//    }
 }

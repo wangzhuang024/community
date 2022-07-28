@@ -8,7 +8,7 @@ import java.util.List;
 
 @Mapper
 public interface DiscussPostMapper {
-    List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit);
+    List<DiscussPost> selectDiscussPosts(int userId, int offset, int limit, int orderMode);
 
     // @Param 取别名 或者 动态的拼一个条件并且该方法有且只有一个条件则需要@Param
     // @Param注解用于给参数取别名
@@ -27,5 +27,8 @@ public interface DiscussPostMapper {
 
     // 改帖子的状态
     int updateStatus(int id, int status);
+
+    // 改分数
+    int updateScore(int id, double score);
 
 }
